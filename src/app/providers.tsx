@@ -28,8 +28,8 @@ function RainbowKitWrapper({ children }: { children: React.ReactNode }) {
   return (
     <RainbowKitProvider 
       theme={resolvedTheme === 'dark' 
-        ? darkTheme({ accentColor: '#00e5ff', accentColorForeground: '#030508', borderRadius: 'small', fontStack: 'system' }) 
-        : lightTheme({ accentColor: '#000000', accentColorForeground: '#ffffff', borderRadius: 'small', fontStack: 'system' })
+        ? darkTheme({ accentColor: '#4DA2FF', accentColorForeground: '#0D1117', borderRadius: 'small', fontStack: 'system' }) 
+        : lightTheme({ accentColor: '#1B6CCB', accentColorForeground: '#ffffff', borderRadius: 'small', fontStack: 'system' })
       }
     >
       {children}
@@ -51,7 +51,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
             {mounted ? (
                <RainbowKitWrapper>{children}</RainbowKitWrapper>
             ) : (
-               <div style={{ visibility: 'hidden' }}>{children}</div>
+               <>{children}</>
             )}
         </ThemeProvider>
       </QueryClientProvider>

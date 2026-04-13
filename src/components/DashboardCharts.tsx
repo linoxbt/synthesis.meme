@@ -37,6 +37,11 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 };
 
 export function VibeAreaChart() {
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => setMounted(true), []);
+
+  if (!mounted) return <div style={{ width: '100%', height: 220, background: 'var(--bg-inset)', borderRadius: 8 }} />;
+
   return (
     <div style={{ width: '100%', height: 220 }}>
       <ResponsiveContainer>
